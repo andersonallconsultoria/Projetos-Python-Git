@@ -1,7 +1,6 @@
 provider "aws" {
   region = "us-west-1"  # Substitua pela região que você preferir
-    access_key = access_key
-    secret_key = secret_key
+  
 }
 
 resource "aws_instance" "app_instance" {
