@@ -1,13 +1,12 @@
 provider "aws" {
-  region = "us-west-1"  # Substitua pela região que você preferir
+  region = "us-east-2"  # Substitua pela região que você preferir
   
 }
 
 resource "aws_instance" "app_instance" {
   ami           = "ami-036841078a4b68e14"  # AMI do Amazon Linux 2 (verifique se esta AMI está disponível na sua região)
   instance_type = "t2.micro"               # Tipo de instância (t2.micro está dentro do free tier)
-  subnet_id     = aws_subnet.public.id
-  vpc_security_group_ids = [aws_security_group.allow_ssh_http.id]
+
 
     user_data = <<-EOF
               #!/bin/bash
